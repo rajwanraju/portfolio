@@ -1,0 +1,211 @@
+@import 'tailwindcss';
+
+/** == == == == ==> tw variables <== == == == == **/
+@theme {
+  --color-primary: #2563eb;
+  --color-primary-hover: #3b82f6;
+  --color-primary-active: #1d4ed8;
+  --color-success: #37c553;
+  --color-error: #ff6666;
+  --color-warning: #ffa800;
+  --color-link: #2563eb;
+  --color-link-hover: #3b82f6;
+  --color-link-active: #1d4ed8;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-gray: #989898;
+  --font-inter: 'Inter', sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
+  --radius-default: 5px;
+}
+
+/** == == == == ==> root css <== == == == == **/
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+html {
+  font-size: 14px;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+body {
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+input,
+select,
+button,
+textarea,
+a {
+  border-radius: var(--border-radius) !important;
+}
+
+/** == == == == ==> scrollbar styles <== == == == == **/
+/* for Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) var(--color-gray);
+}
+
+/* for webkit-based browsers (chrome, Safari) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 3px var(--color-gray);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-gray);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+/** == == == == ==> utilities styles <== == == == == **/
+@layer utilities {
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  /* Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/** == == == == ==> ant design <== == == == == **/
+.ant-btn-primary {
+  box-shadow: none !important;
+}
+
+.ant-modal-mask {
+  background-color: rgba(0, 0, 0, 0.9) !important;
+}
+
+.ant-input-group-addon {
+  @apply !bg-[#1D1D1D] hover:!bg-[#3D3D3D];
+}
+
+.ant-modal-confirm-btns .ant-btn-primary {
+  @apply !bg-success;
+}
+
+.ant-table-cell {
+  border-radius: 0px !important ;
+  border-bottom: 1px solid var(--color-gray) !important;
+  border-inline-end: 1px solid var(--color-gray) !important;
+}
+.ant-table-content table {
+  border-top: 1px solid var(--color-gray) !important;
+  border-left: 1px solid var(--color-gray) !important;
+}
+
+/** == == == == ==> components styles <== == == == == **/
+@layer components {
+  /* navbar style start */
+  .mobile-menu {
+    left: -200%;
+    transition: 0.5s;
+  }
+  .mobile-menu.active {
+    left: 0;
+  }
+  .mobile-menu ul li ul {
+    display: none;
+  }
+  .mobile-menu ul li:hover ul {
+    display: block;
+  }
+  /* navbar style end */
+
+  /* portfolio styles start */
+  .testimonial-carousel .slick-slide {
+    padding: 0 20px;
+  }
+  
+  .testimonial-carousel .slick-dots {
+    bottom: -40px;
+  }
+  
+  .testimonial-carousel .slick-dots li button:before {
+    font-size: 12px;
+    color: #d1d5db;
+  }
+  
+  .testimonial-carousel .slick-dots li.slick-active button:before {
+    color: #2563eb;
+  }
+
+  /* portfolio grid hover effects */
+  .portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+  }
+
+  .portfolio-item img {
+    transition: transform 0.3s ease;
+  }
+
+  .portfolio-item:hover img {
+    transform: scale(1.1);
+  }
+
+  .portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+  }
+
+  /* statistics counter animation */
+  .counter {
+    display: inline-block;
+    animation: countUp 2s ease-out;
+  }
+
+  @keyframes countUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* smooth scrolling for anchor links */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* section spacing */
+  .section-padding {
+    padding: 80px 0;
+  }
+
+  @media (max-width: 768px) {
+    .section-padding {
+      padding: 60px 0;
+    }
+  }
+  /* portfolio styles end */
+}
