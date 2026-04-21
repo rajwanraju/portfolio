@@ -1,96 +1,103 @@
 'use client';
 
-import { Button, Card, Row, Col } from 'antd';
-import { 
-  TwitterOutlined, 
-  SkypeOutlined, 
-  LinkedinOutlined, 
-  GithubOutlined,
-  MailOutlined,
-  PhoneOutlined
-} from '@ant-design/icons';
+import { GithubOutlined, MailOutlined, PhoneOutlined } from '@ant-design/icons';
+import { portfolioData } from '@data/portfolio';
+import { Button } from 'antd';
 
 export default function ContactSection() {
   return (
-    <section className="py-20 bg-gray-50" id="contact">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 mb-4">
-            <span className="text-blue-600 font-semibold">Get In Touch</span>
-            <div className="w-8 h-0.5 bg-blue-600"></div>
+    <section
+      className='section-padding'
+      id='contact'
+    >
+      <div className='container mx-auto px-4'>
+        <div className='mx-auto mb-10 max-w-3xl text-center'>
+          <div className='mb-3 text-xs font-semibold tracking-[0.25em] text-white/60 uppercase'>
+            Contact
           </div>
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
-            Let's Work Together <br />
-            On Your Next Project
+          <h2 className='text-balance text-3xl font-semibold text-white sm:text-4xl'>
+            Let’s build something great
           </h2>
+          <p className='mt-4 text-sm leading-relaxed text-white/70 sm:text-base'>
+            For collaboration, full-time roles, or consulting — reach out anytime.
+          </p>
         </div>
-        
-        <Row gutter={[48, 32]} justify="center">
-          <Col xs={24} lg={16}>
-            <Card className="border-0 shadow-lg">
-              <div className="text-center space-y-6">
-                <h3 className="text-2xl font-bold text-gray-900">Ready to Start?</h3>
-                <p className="text-gray-600 text-lg">
-                  I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
-                  Whether you have a question or just want to say hi, I'll try my best to get back to you!
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button 
-                    type="primary" 
-                    size="large" 
-                    className="bg-blue-600 hover:bg-blue-700 border-blue-600 hover:border-blue-700 h-12 px-8 text-lg"
-                    href="mailto:rajwan.dinesh@gmail.com"
-                    icon={<MailOutlined />}
-                  >
-                    Send Email
-                  </Button>
-                  <Button 
-                    size="large" 
-                    className="h-12 px-8 text-lg border-blue-600 text-blue-600 hover:bg-blue-50"
-                    href="tel:+1234567890"
-                    icon={<PhoneOutlined />}
-                  >
-                    Call Now
-                  </Button>
-                </div>
-                <div className="pt-8 border-t border-gray-200">
-                  <p className="text-gray-500 mb-4">
-                    Or connect with me on social media
-                  </p>
-                  <div className="flex justify-center space-x-4">
-                    <Button 
-                      type="text" 
-                      icon={<LinkedinOutlined />} 
-                      className="text-2xl hover:text-blue-500 transition-colors"
-                      href="https://www.linkedin.com/in/rajwan-ullah-551129116"
-                      target="_blank"
-                    />
-                    <Button 
-                      type="text" 
-                      icon={<GithubOutlined />} 
-                      className="text-2xl hover:text-blue-500 transition-colors"
-                      href="https://github.com/rajwanraju"
-                      target="_blank"
-                    />
-                    <Button 
-                      type="text" 
-                      icon={<TwitterOutlined />} 
-                      className="text-2xl hover:text-blue-500 transition-colors"
-                      href="https://twitter.com"
-                      target="_blank"
-                    />
-                    <Button 
-                      type="text" 
-                      icon={<SkypeOutlined />} 
-                      className="text-2xl hover:text-blue-500 transition-colors"
-                      href="skype:rajwan?chat"
-                    />
-                  </div>
-                </div>
-              </div>
-            </Card>
-          </Col>
-        </Row>
+
+        <div className='mx-auto grid max-w-5xl gap-6 lg:grid-cols-3'>
+          <a
+            className='rounded-2xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur'
+            href={`mailto:${portfolioData.personal.email}`}
+          >
+            <div className='text-xs font-semibold tracking-[0.25em] text-white/60 uppercase'>Email</div>
+            <div className='mt-3 flex items-center gap-2 text-sm text-white/85'>
+              <MailOutlined />
+              {portfolioData.personal.email}
+            </div>
+          </a>
+
+          <a
+            className='rounded-2xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur'
+            href={`tel:${portfolioData.personal.phone}`}
+          >
+            <div className='text-xs font-semibold tracking-[0.25em] text-white/60 uppercase'>Phone</div>
+            <div className='mt-3 flex items-center gap-2 text-sm text-white/85'>
+              <PhoneOutlined />
+              {portfolioData.personal.phone}
+            </div>
+          </a>
+
+          <a
+            className='rounded-2xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur'
+            href={portfolioData.personal.github}
+            target='_blank'
+            rel='noreferrer'
+          >
+            <div className='text-xs font-semibold tracking-[0.25em] text-white/60 uppercase'>GitHub</div>
+            <div className='mt-3 flex items-center gap-2 text-sm text-white/85'>
+              <GithubOutlined />
+              github.com/rajwanraju
+            </div>
+          </a>
+        </div>
+
+        <div className='mx-auto mt-8 max-w-5xl rounded-2xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur'>
+          <div className='text-xs font-semibold tracking-[0.25em] text-white/60 uppercase'>Education</div>
+          <div className='mt-3 text-sm text-white/80'>
+            {portfolioData.education[0].institution} — {portfolioData.education[0].degree},{' '}
+            {portfolioData.education[0].field}
+          </div>
+
+          <div className='mt-6 text-xs font-semibold tracking-[0.25em] text-white/60 uppercase'>Certificates</div>
+          <ul className='mt-3 list-disc space-y-2 pl-5 text-sm text-white/80'>
+            {portfolioData.certificates.map((c) => (
+              <li key={c}>{c}</li>
+            ))}
+          </ul>
+
+          <div className='mt-6 text-xs font-semibold tracking-[0.25em] text-white/60 uppercase'>Reference</div>
+          <div className='mt-3 text-sm text-white/80'>
+            {portfolioData.references[0].name} — {portfolioData.references[0].company} (
+            <a
+              className='underline underline-offset-4'
+              href={`mailto:${portfolioData.references[0].email}`}
+            >
+              {portfolioData.references[0].email}
+            </a>
+            )
+          </div>
+        </div>
+
+        <div className='mx-auto mt-10 max-w-5xl text-center'>
+          <Button
+            type='primary'
+            size='large'
+            className='!h-12 !rounded-full !border-0 !bg-white !px-6 !text-[15px] !font-semibold !text-black'
+            href={`mailto:${portfolioData.personal.email}`}
+            icon={<MailOutlined />}
+          >
+            Send a message
+          </Button>
+        </div>
       </div>
     </section>
   );

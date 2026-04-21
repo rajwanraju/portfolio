@@ -1,97 +1,104 @@
 'use client';
 
-import { Button, Row, Col } from 'antd';
-import { 
-  TwitterOutlined, 
-  SkypeOutlined, 
-  LinkedinOutlined,
-  GithubOutlined
-} from '@ant-design/icons';
-import Image from 'next/image';
+import { GithubOutlined, MailOutlined, PhoneOutlined } from '@ant-design/icons';
+import { portfolioData } from '@data/portfolio';
+import { Button } from 'antd';
 
 export default function HeroSection() {
   return (
-    <section className="relative bg-gradient-to-br from-blue-50 to-indigo-100 py-20 lg:py-32">
-      <div className="container mx-auto px-4">
-        <Row gutter={[48, 24]} align="middle" justify="space-between">
-          <Col xs={24} lg={12}>
-            <div className="space-y-6">
-              <h3 className="text-2xl font-semibold text-gray-600">Hey There!</h3>
-              <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                I am <span className="text-blue-600">RAJWAN</span>
-              </h1>
-              <h5 className="text-xl lg:text-2xl font-medium text-gray-700 uppercase tracking-wide">
-                Senior Full Stack Software Engineer
-              </h5>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                Passionate about building scalable web applications and microservices. 
-                Expert in modern web technologies with 5+ years of experience in full-stack development.
-              </p>
-              
-              <div className="flex space-x-4 my-8">
-                <Button 
-                  type="text" 
-                  icon={<LinkedinOutlined />} 
-                  className="text-2xl hover:text-blue-500 transition-colors"
-                  href="https://linkedin.com"
-                  target="_blank"
-                />
-                <Button 
-                  type="text" 
-                  icon={<GithubOutlined />} 
-                  className="text-2xl hover:text-blue-500 transition-colors"
-                  href="https://github.com"
-                  target="_blank"
-                />
-                <Button 
-                  type="text" 
-                  icon={<TwitterOutlined />} 
-                  className="text-2xl hover:text-blue-500 transition-colors"
-                  href="https://twitter.com"
-                  target="_blank"
-                />
-                <Button 
-                  type="text" 
-                  icon={<SkypeOutlined />} 
-                  className="text-2xl hover:text-blue-500 transition-colors"
-                  href="skype:rajwan?chat"
-                />
-              </div>
-              
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
-                  type="primary" 
-                  size="large" 
-                  className="bg-blue-600 hover:bg-blue-700 border-blue-600 hover:border-blue-700 h-12 px-8 text-lg"
-                  href="#portfolio"
-                >
-                  View My Work
-                </Button>
-                <Button 
-                  size="large" 
-                  className="h-12 px-8 text-lg border-blue-600 text-blue-600 hover:bg-blue-50"
-                  href="#contact"
-                >
-                  Get In Touch
-                </Button>
-              </div>
+    <section className='relative py-18 sm:py-24 lg:py-32'>
+      <div className='container mx-auto px-4'>
+        <div className='mx-auto grid max-w-5xl gap-10 lg:grid-cols-[1.4fr_1fr] lg:items-center'>
+          <div>
+            <div className='inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm text-white/80 backdrop-blur'>
+              <span className='inline-block h-2 w-2 rounded-full bg-emerald-400' />
+              Available for new opportunities
             </div>
-          </Col>
-          <Col xs={24} lg={10}>
-            <div className="flex justify-center lg:justify-end">
-              <div className="relative">
-                <Image
-                  src="/img/rajwan.jpg"
-                  alt="Rajwan Raju - Senior Full Stack Engineer"
-                  width={400}
-                  height={500}
-                  className="rounded-2xl shadow-2xl"
-                  priority
-                />
-              </div>
+
+            <h1 className='mt-6 text-balance text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl'>
+              {portfolioData.personal.name}
+              <span className='block text-white/70'>{portfolioData.personal.title}</span>
+            </h1>
+
+            <p className='mt-6 max-w-2xl text-pretty text-base leading-relaxed text-white/70 sm:text-lg'>
+              {portfolioData.personal.summary}
+            </p>
+
+            <div className='mt-8 flex flex-col gap-3 sm:flex-row'>
+              <Button
+                type='primary'
+                size='large'
+                className='!h-12 !rounded-full !border-0 !bg-white !px-6 !text-[15px] !font-semibold !text-black'
+                href='#contact'
+              >
+                Let&apos;s work together
+              </Button>
+              <Button
+                size='large'
+                className='!h-12 !rounded-full !border !border-white/15 !bg-transparent !px-6 !text-[15px] !font-semibold !text-white'
+                href='#portfolio'
+              >
+                See selected work
+              </Button>
             </div>
-          </Col>
-        </Row>
+
+            <div className='mt-8 flex flex-wrap gap-3 text-sm text-white/70'>
+              <a
+                className='inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2'
+                href={portfolioData.personal.github}
+                target='_blank'
+                rel='noreferrer'
+              >
+                <GithubOutlined />
+                GitHub
+              </a>
+              <a
+                className='inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2'
+                href={`mailto:${portfolioData.personal.email}`}
+              >
+                <MailOutlined />
+                {portfolioData.personal.email}
+              </a>
+              <a
+                className='inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2'
+                href={`tel:${portfolioData.personal.phone}`}
+              >
+                <PhoneOutlined />
+                {portfolioData.personal.phone}
+              </a>
+            </div>
+          </div>
+
+          <div className='rounded-3xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur'>
+            <div className='text-xs font-semibold tracking-[0.25em] text-white/60 uppercase'>
+              Location
+            </div>
+            <div className='mt-2 text-sm leading-relaxed text-white/80'>{portfolioData.personal.location}</div>
+
+            <div className='mt-8 text-xs font-semibold tracking-[0.25em] text-white/60 uppercase'>
+              Focus
+            </div>
+            <div className='mt-3 flex flex-wrap gap-2'>
+              {[
+                'Laravel',
+                'Node.js',
+                'Next.js',
+                'Vue/Nuxt',
+                'Redis',
+                'CI/CD',
+                'Docker',
+                'Golang (microservices)',
+              ].map((t) => (
+                <span
+                  key={t}
+                  className='rounded-full border border-white/10 bg-white/[0.02] px-3 py-1 text-xs text-white/70'
+                >
+                  {t}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
