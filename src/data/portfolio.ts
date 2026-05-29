@@ -29,12 +29,25 @@ export const portfolioData = {
     ],
     testing: ['Jest', 'PHPUnit'],
   },
-  experience: [
-    {
-      company: 'Silicon Orchard LTD',
-      role: 'Senior Software Engineer',
-      start: '02/2022',
-      end: 'Present',
+   experience: [
+     {
+       company: 'Pivotly',
+       role: 'Senior Software Engineer',
+       start: '07/2025',
+       end: 'Present',
+       highlights: [
+         'Developed key components of a node-based AI workflow builder using React Flow, improving usability of automation design.',
+         'Co-developed a distributed API execution engine to handle complex, multi-step workflows.',
+         'Implemented and optimized Bull-based queue systems for asynchronous job processing and fault tolerance.',
+         'Contributed to a modular connector framework for third-party integrations, enabling scalable and reusable connections.',
+         'Supported implementation of advanced workflow capabilities including branching logic, retries, and concurrency handling.'
+       ],
+     },
+     {
+       company: 'Silicon Orchard LTD',
+       role: 'Senior Software Engineer',
+       start: '02/2022',
+       end: '06/2025',
       highlights: [
         'Led end-to-end delivery of enterprise apps (Video Streaming, IoT Vehicle Tracking, CRM, Payroll, E-commerce) serving thousands of active users.',
         'Architected scalable REST APIs and microservices using Laravel, Node.js (Express), and Golang for high availability and performance.',
