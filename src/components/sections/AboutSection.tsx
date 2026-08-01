@@ -50,7 +50,7 @@ export default function AboutSection() {
             <div className='mt-8 rounded-xl border border-white/10 bg-black/20 p-4'>
               <div className='text-xs font-semibold tracking-[0.25em] text-white/60 uppercase'>Now</div>
               <div className='mt-2 text-sm text-white/80'>
-                Senior Software Engineer at <span className='font-semibold text-white'>Silicon Orchard LTD</span>
+                Senior Software Engineer at <span className='font-semibold text-white'>Pivotly</span>
               </div>
             </div>
           </div>

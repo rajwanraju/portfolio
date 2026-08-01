@@ -18,7 +18,7 @@ export default function StatisticsSection() {
           <Col xs={24} sm={8} md={6}>
             <div className="text-center">
               <h3 className="text-4xl font-bold text-blue-600 mb-2">
-                <span className="counter">5</span>+
+                <span className="counter">6</span>+
               </h3>
               <p className="text-gray-600 font-medium">Years Experience</p>
             </div>

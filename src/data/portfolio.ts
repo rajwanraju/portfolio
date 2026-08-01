@@ -7,7 +7,7 @@ export const portfolioData = {
     location: '51/A/1, West-Raza bazar, Dhaka-1215',
     github: 'https://github.com/rajwanraju',
     summary:
-      'Senior Software Engineer with 6+ years of experience building scalable web applications using Laravel and Node.js on the backend and Next.js/Vue/Nuxt on the frontend. Passionate about clean architecture, performance optimization, and delivering end-to-end solutions that drive business impact.',
+      'Senior Software Engineer with 6+ years of experience building scalable web applications, SaaS products, and distributed systems using PHP, Node.js, React, Python (FastAPI), and AWS. Strong experience in backend design & development, REST APIs, real-time systems, and AI-powered workflow automation. Passionate about clean architecture, performance optimization, and delivering end-to-end solutions that drive business impact.',
     interests: [
       'Keeping up with new technologies, languages, and tools',
       'Exploring different architectures and design patterns',
@@ -15,19 +15,27 @@ export const portfolioData = {
     ],
   },
   skills: {
-    backend: ['PHP (Laravel, CodeIgniter)', 'Node.js (Express)', 'Go (Beginner)'],
-    frontend: ['React.js', 'Next.js', 'Redux', 'Vue.js', 'Nuxt.js', 'Vuex', 'Composition API'],
-    databases: ['MySQL', 'PostgreSQL', 'SQL Server', 'Redis (Caching & Pub/Sub)'],
+    backend: ['PHP (Laravel, CodeIgniter)', 'Node.js (Express, Microservices)', 'Python (FastAPI)', 'Go (Beginner)'],
+    frontend: ['React.js', 'Next.js', 'Redux', 'TypeScript', 'Vue.js', 'Nuxt.js', 'Vuex', 'Composition API'],
+    databases: ['MySQL', 'PostgreSQL', 'SQL Server', 'MongoDB', 'Supabase', 'Prisma', 'Redis (Caching, Pub/Sub, Queue via Bull)'],
     architecture: ['REST APIs', 'Event-Driven Systems', 'Real-Time Systems'],
     devopsCloud: [
       'Docker',
       'CI/CD (GitHub Actions, GitLab CI)',
-      'AWS (EC2, S3)',
+      'AWS (EC2, S3, RDS)',
       'Nginx',
+      'Linux (Ubuntu)',
+      'Bash',
       'Load Balancer / Reverse Proxy',
       'Queues & deployment automation',
     ],
-    testing: ['Jest', 'PHPUnit'],
+    testing: ['Jest', 'PHPUnit', 'Unit Testing', 'Integration Testing'],
+    ai: [
+      'OpenAI API',
+      'AI Workflow Automation (n8n)',
+      'AI-assisted Development (Cursor, ChatGPT, Claude, Ollama)',
+      'Prompt Engineering',
+    ],
   },
    experience: [
      {
@@ -90,7 +98,7 @@ export const portfolioData = {
     },
   ],
   certificates: [
-    'Web Development With Laravel - BITM',
+    'Professional Web Dev. With Laravel & Vue.js - BITM',
     'Advance Web development With Laravel and Vue js - Esikhon.com',
   ],
   references: [
@@ -102,19 +110,29 @@ export const portfolioData = {
   ],
   selectedWork: [
     {
+      title: 'AI Workflow Automation Platform',
+      description: 'Node-based AI workflow builder with distributed API execution engine, Bull queue processing, and modular connector framework for third-party integrations.',
+      tags: ['React Flow', 'Node.js', 'Bull Queues', 'AI/OpenAI', 'Microservices'],
+    },
+    {
       title: 'Enterprise Video Streaming Platform',
       description: 'End-to-end delivery with scalable APIs, performance tuning, and production deployment.',
       tags: ['Laravel', 'Node.js', 'Redis', 'CI/CD', 'Docker'],
     },
     {
       title: 'IoT Vehicle Tracking System',
-      description: 'Real-time tracking dashboards and event processing with low latency.',
-      tags: ['Golang', 'Redis', 'Socket.io', 'PostgreSQL'],
+      description: 'Real-time IoT tracking and vehicle security platform with 100+ REST API endpoints serving thousands of daily requests.',
+      tags: ['Golang', 'Redis', 'Socket.io', 'PostgreSQL', 'Real-Time'],
     },
     {
       title: 'E-commerce Platforms & Payments',
-      description: 'Multi-vendor commerce, wallets/refunds, and multiple payment gateway integrations.',
+      description: 'Multi-vendor commerce, wallets/refunds, and 6+ payment gateway integrations including bKash, SSLCOMMERZ, Stripe, and PayPal.',
       tags: ['Laravel', 'Vue/Nuxt', 'Stripe', 'SSLCOMMERZ', 'bKash'],
+    },
+    {
+      title: 'CRM & E-learning Platform',
+      description: 'Global e-learning platform for UK client with live classes, real-time chat, payments, and attendance tracking.',
+      tags: ['Laravel', 'Real-Time Chat', 'Payments', 'Vue.js'],
     },
   ],
 } as const;
