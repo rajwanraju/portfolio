@@ -1,6 +1,6 @@
 'use client';
 
-import { GithubOutlined, MailOutlined, PhoneOutlined } from '@ant-design/icons';
+import { DownloadOutlined, GithubOutlined, MailOutlined, PhoneOutlined } from '@ant-design/icons';
 import { portfolioData } from '@data/portfolio';
 import { Button } from 'antd';
 
@@ -29,9 +29,12 @@ export default function HeroSection() {
                 type='primary'
                 size='large'
                 className='!h-12 !rounded-full !border-0 !bg-white !px-6 !text-[15px] !font-semibold !text-black'
-                href='#contact'
+                href='https://drive.google.com/uc?export=download&id=1haf4va7O7jHGAoSYbdPgOACAFHyf9haG'
+                target='_blank'
+                rel='noreferrer'
+                icon={<DownloadOutlined />}
               >
-                Let&apos;s work together
+                Download Resume
               </Button>
               <Button
                 size='large'
@@ -84,10 +87,11 @@ export default function HeroSection() {
                 'Node.js',
                 'Next.js',
                 'Vue/Nuxt',
+                'Python/FastAPI',
+                'TypeScript',
                 'Redis',
-                'CI/CD',
-                'Docker',
-                'Golang (microservices)',
+                'Docker/AWS',
+                'AI/Automation',
               ].map((t) => (
                 <span
                   key={t}

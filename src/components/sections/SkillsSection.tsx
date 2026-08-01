@@ -18,11 +18,12 @@ export default function SkillsSection() {
           </h2>
         </div>
 
-        <div className='mx-auto grid max-w-5xl gap-6 lg:grid-cols-2'>
+        <div className='mx-auto grid max-w-5xl gap-6 md:grid-cols-2 lg:grid-cols-3'>
           {(
             [
               ['Backend', portfolioData.skills.backend],
               ['Frontend', portfolioData.skills.frontend],
+              ['AI & Automation', portfolioData.skills.ai],
               ['Databases', portfolioData.skills.databases],
               ['Architecture', portfolioData.skills.architecture],
               ['DevOps & Cloud', portfolioData.skills.devopsCloud],
